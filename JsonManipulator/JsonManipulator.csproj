@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>netstandard2.0;net5.0;net6.0;net7.0</TargetFrameworks>
+		<Nullable>enable</Nullable>
+		<LangVersion>10.0</LangVersion>
+		<SuppressTfmSupportBuildWarnings>true</SuppressTfmSupportBuildWarnings>
+		<PackageIcon>images\JsonManipulator.png</PackageIcon>
+		<CheckEolTargetFramework>false</CheckEolTargetFramework>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<Title>JsonManipulator</Title>
+		<Authors>Arda Terekeci</Authors>
+		<Version>1.0.2</Version>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<RepositoryUrl>https://github.com/adomorn/JsonManipulator</RepositoryUrl>
+		<PackageTags>Json</PackageTags>
+		<PackageLicenseFile>License.txt</PackageLicenseFile>
+		<Description>A helper class for JSON operations that provides methods to convert a JSON string to a dictionary of strings, extract values from a JSON element and add them to a dictionary of strings, and convert a dictionary of strings to a JSON string representation.</Description>
+		<PackageReleaseNotes>Added Multi TargetFrameworks</PackageReleaseNotes>
+	
+	</PropertyGroup>
+	<ItemGroup>
+		<Using Include="System.Linq" />
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="System.Text.Json" Version="7.0.1" Condition="$(TargetFramework) == 'netstandard2.0' OR $(TargetFramework) =='net5.0'" />
+	</ItemGroup>
+	<PropertyGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
+		<NoWarn>$(NoWarn);nullable</NoWarn>
+	</PropertyGroup>
+	<ItemGroup>
+		<None Include="..\JsonManipulator.png" Pack="true" Visible="false" PackagePath="images\JsonManipulator.png" />
+		<None Include="..\README.md">
+		  <Pack>True</Pack>
+		  <PackagePath>\</PackagePath>
+		</None>
+		<None Include="..\License.txt" Pack="true" PackagePath=""/>
+	</ItemGroup>
+</Project>
