@@ -80,4 +80,4 @@ Convert a Dictionary<string, string?> to a JSON string representation.
 
 ##License
 
-This project is licensed under the MIT License. See the  [LICENSE](https://github.com/adomorn/JsonManipulator/blob/master/License.md) file for details.
+This project is licensed under the MIT License. See the  [LICENSE](https://github.com/adomorn/JsonManipulator/blob/master/License.txt) file for details.
